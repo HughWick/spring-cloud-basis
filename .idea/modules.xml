@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/spring-Integration/Spring-Integration.iml" filepath="$PROJECT_DIR$/spring-Integration/Spring-Integration.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/spring-cloud-basis.iml" filepath="$PROJECT_DIR$/.idea/spring-cloud-basis.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-eureka/spring-cloud-eureka.iml" filepath="$PROJECT_DIR$/spring-cloud-eureka/spring-cloud-eureka.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-feign/spring-cloud-feign.iml" filepath="$PROJECT_DIR$/spring-cloud-feign/spring-cloud-feign.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-user/spring-cloud-user.iml" filepath="$PROJECT_DIR$/spring-cloud-user/spring-cloud-user.iml" />
+      <module fileurl="file://$PROJECT_DIR$/spring-cloud-zuul/spring-cloud-zuul.iml" filepath="$PROJECT_DIR$/spring-cloud-zuul/spring-cloud-zuul.iml" />
+    </modules>
+  </component>
+</project>
