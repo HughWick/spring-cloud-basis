@@ -33,13 +33,13 @@
         <druid-spring-boot-starter.version>1.1.22</druid-spring-boot-starter.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
+<!--        <java.version>1.8</java.version>-->
+<!--        <maven.compiler.source>1.8</maven.compiler.source>-->
+<!--        <maven.compiler.target>1.8</maven.compiler.target>-->
         <hutool.version>4.5.10</hutool.version>
         <kaptcha.version>0.0.9</kaptcha.version>
         <velocity.version>1.7</velocity.version>
         <jasypt.version>2.1.0</jasypt.version>
-        <java.version>1.8</java.version>
         <jackson.modules>2.9.8</jackson.modules>
         <!--zipkin2.12.x需要此版本jooq-->
         <jooq.version>3.11.9</jooq.version>
