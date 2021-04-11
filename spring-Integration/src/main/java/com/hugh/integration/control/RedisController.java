@@ -2,7 +2,6 @@ package com.hugh.integration.control;
 
 import com.google.common.base.Throwables;
 import lombok.extern.slf4j.Slf4j;
-import net.sf.json.JSONObject;
 import org.springframework.integration.redis.util.RedisLockRegistry;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -66,5 +65,10 @@ public class RedisController {
             log.info("{}-{}释放锁", Thread.currentThread(), new SimpleDateFormat("HH:mm:ss.S").format(new Date()));
             lock.unlock();
         }
+    }
+
+    public static void main(String[] args) {
+        var str = "123";
+        System.out.println("===");
     }
 }

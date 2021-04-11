@@ -19,23 +19,23 @@
     </modules>
 
     <properties>
+        <java.version>11</java.version>
+        <maven.compiler.source>${java.version}</maven.compiler.source>
+        <maven.compiler.target>${java.version}</maven.compiler.target>
         <!-- Spring Settings -->
-        <spring-boot.version>2.1.5.RELEASE</spring-boot.version>
+        <spring-boot.version>2.3.9.RELEASE</spring-boot.version>
+        <spring-cloud.version>Hoxton.SR10</spring-cloud.version>
         <spring-boot-admin.version>2.1.4</spring-boot-admin.version>
-        <spring-cloud.version>Greenwich.RELEASE</spring-cloud.version>
         <spring-platform.version>Cairo-SR7</spring-platform.version>
         <security.oauth.version>2.3.5.RELEASE</security.oauth.version>
         <security.oauth.auto.version>2.1.2.RELEASE</security.oauth.auto.version>
         <flyway.version>5.2.4</flyway.version>
         <!-- mybatis Settings -->
         <mybatis-plus.version>3.3.2</mybatis-plus.version>
-
+        <!--  阿里数据源   -->
         <druid-spring-boot-starter.version>1.1.22</druid-spring-boot-starter.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-<!--        <java.version>1.8</java.version>-->
-<!--        <maven.compiler.source>1.8</maven.compiler.source>-->
-<!--        <maven.compiler.target>1.8</maven.compiler.target>-->
+        <!--  其它 -->
         <hutool.version>4.5.10</hutool.version>
         <kaptcha.version>0.0.9</kaptcha.version>
         <velocity.version>1.7</velocity.version>
@@ -76,15 +76,15 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-sleuth</artifactId>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-sleuth-zipkin</artifactId>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.cloud</groupId>-->
+        <!--            <artifactId>spring-cloud-sleuth-zipkin</artifactId>-->
+        <!--        </dependency>-->
         <!--断路器依赖-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>-->
-<!--        </dependency>-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.cloud</groupId>-->
+        <!--            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>-->
+        <!--        </dependency>-->
         <!--Lombok-->
         <dependency>
             <groupId>org.projectlombok</groupId>
@@ -97,12 +97,8 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <!-- https://mvnrepository.com/artifact/net.sf.json-lib/json-lib -->
-        <dependency>
-            <groupId>net.sf.json-lib</groupId>
-            <artifactId>json-lib</artifactId>
-            <version>2.4</version>
-        </dependency>
+
+
         <!-- https://mvnrepository.com/artifact/org.quartz-scheduler/quartz -->
         <dependency>
             <groupId>org.quartz-scheduler</groupId>
@@ -126,6 +122,11 @@
                     <groupId>org.apache.shiro</groupId>
                 </exclusion>
             </exclusions>
+        </dependency>
+        <dependency>
+            <groupId>com.github.hughwick</groupId>
+            <artifactId>toolbox</artifactId>
+            <version>1.6.0</version>
         </dependency>
     </dependencies>
 
@@ -222,25 +223,25 @@
                         </execution>
                     </executions>
                 </plugin>
-<!--                <plugin>-->
-<!--                    <groupId>com.spotify</groupId>-->
-<!--                    <artifactId>docker-maven-plugin</artifactId>-->
-<!--                    <version>0.4.12</version>-->
-<!--                    <configuration>-->
-<!--                        <imageName>${registry.url}/${project.name}:0.0.1</imageName>-->
-<!--                        <dockerHost>${docker.url}</dockerHost>-->
-<!--                        <dockerDirectory>${project.basedir}</dockerDirectory>-->
-<!--                        <resources>-->
-<!--                            <resource>-->
-<!--                                <targetPath>/</targetPath>-->
-<!--                                <directory>${project.build.directory}</directory>-->
-<!--                                <include>${project.build.finalName}.jar</include>-->
-<!--                            </resource>-->
-<!--                        </resources>-->
-<!--                        <serverId>docker-hub</serverId>-->
-<!--                        <registryUrl>https://index.docker.io/v1/</registryUrl>-->
-<!--                    </configuration>-->
-<!--                </plugin>-->
+                <!--                <plugin>-->
+                <!--                    <groupId>com.spotify</groupId>-->
+                <!--                    <artifactId>docker-maven-plugin</artifactId>-->
+                <!--                    <version>0.4.12</version>-->
+                <!--                    <configuration>-->
+                <!--                        <imageName>${registry.url}/${project.name}:0.0.1</imageName>-->
+                <!--                        <dockerHost>${docker.url}</dockerHost>-->
+                <!--                        <dockerDirectory>${project.basedir}</dockerDirectory>-->
+                <!--                        <resources>-->
+                <!--                            <resource>-->
+                <!--                                <targetPath>/</targetPath>-->
+                <!--                                <directory>${project.build.directory}</directory>-->
+                <!--                                <include>${project.build.finalName}.jar</include>-->
+                <!--                            </resource>-->
+                <!--                        </resources>-->
+                <!--                        <serverId>docker-hub</serverId>-->
+                <!--                        <registryUrl>https://index.docker.io/v1/</registryUrl>-->
+                <!--                    </configuration>-->
+                <!--                </plugin>-->
             </plugins>
         </pluginManagement>
         <plugins>
