@@ -8,10 +8,15 @@ spring:
       name: user
       password: password123
   redis:
-    port: 6379
-    host: 192.168.1.47
-    database: 14 # Redis数据库索引
-    password: Th##123456$
+    port: 9991
+    host: 146.56.113.135
+#    database: 14 # Redis数据库索引
+    password: password123@
+#    cluster:
+#      nodes:
+#        - 192.168.1.100:7779
+#        - 192.168.1.100:7778
+#        - 192.168.1.100:7777
     timeout: 10000 # 连接超时时间（毫秒）
     jedis:
       pool:

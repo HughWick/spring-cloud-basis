@@ -1,6 +1,6 @@
-package com.hugh.user.service;
+package com.hugh.config.service;
 
-import com.hugh.user.model.User;
+import com.hugh.config.model.User;
 
 /**
  * @author AS

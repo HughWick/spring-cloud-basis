@@ -1,9 +1,8 @@
-package com.hugh.user.service.impl;
+package com.hugh.config.service.impl;
 
-import com.hugh.user.mapper.UserMapper;
-import com.hugh.user.model.User;
-import com.hugh.user.service.UserService;
-import org.apache.ibatis.annotations.Mapper;
+import com.hugh.config.mapper.UserMapper;
+import com.hugh.config.model.User;
+import com.hugh.config.service.UserService;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;

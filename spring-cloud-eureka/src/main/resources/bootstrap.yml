@@ -1,5 +1,5 @@
 server:
-  port: 8761
+  port: 16666
 spring:
   security:
     user:
@@ -10,10 +10,6 @@ eureka:
   instance:
     hostname: 127.0.0.1
     prefer-ip-address: true
-
-
-
-
 
   client:
     register-with-eureka: false  # 是否注册自己的信息到EurekaServer，默认是true
