@@ -25,7 +25,7 @@ public class UserControl {
 
     @RequestMapping("/simple/{id}")
     public User find(@PathVariable long id) {
-        System.out.println("==端口=>" + port +"--线程--"+Thread.currentThread().getName());
+        System.out.println("==端口=>" + port + "--线程--" + Thread.currentThread().getName());
         return userService.find(id);
     }
 

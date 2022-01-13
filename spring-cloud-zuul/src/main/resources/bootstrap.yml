@@ -7,6 +7,7 @@ spring:
     user:
       name: user
       password: password123
+
 eureka:
   instance:
     prefer-ip-address: true
