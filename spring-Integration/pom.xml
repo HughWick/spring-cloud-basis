@@ -23,11 +23,14 @@
         <dependency>
             <groupId>org.springframework.integration</groupId>
             <artifactId>spring-integration-redis</artifactId>
-            <version>5.1.5.RELEASE</version>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.hughwick</groupId>
+            <artifactId>toolbox-all</artifactId>
         </dependency>
     </dependencies>
 </project>

@@ -33,10 +33,10 @@
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>com.baomidou</groupId>-->
-<!--            <artifactId>mybatis-plus-boot-starter</artifactId>-->
-<!--        </dependency>-->
+        <dependency>
+            <groupId>com.github.hughwick</groupId>
+            <artifactId>toolbox-all</artifactId>
+        </dependency>
     </dependencies>
 
 </project>
