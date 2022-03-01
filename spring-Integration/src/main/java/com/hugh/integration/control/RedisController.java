@@ -1,17 +1,20 @@
 package com.hugh.integration.control;
 
+import cn.hutool.crypto.SecureUtil;
+import cn.hutool.crypto.asymmetric.Sign;
+import cn.hutool.crypto.asymmetric.SignAlgorithm;
 import com.github.hugh.aop.constraints.IpV4;
+import com.github.hugh.util.gson.JsonObjectUtils;
+import com.github.hugh.util.ip.Ip2regionUtils;
 import com.google.common.base.Throwables;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.integration.redis.util.RedisLockRegistry;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.security.KeyPair;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -25,7 +28,7 @@ import java.util.concurrent.locks.Lock;
 @Slf4j
 @RestController
 @RequestMapping("redis")
-public class RedisController  {
+public class RedisController {
 
     @Resource
     private RedisLockRegistry redisLockRegistry;
@@ -105,17 +108,25 @@ public class RedisController  {
 //        }
     }
 
-    public static void main(String[] args)
-    {
-//        OkHttp3ClientHttpRequestFactory
-//        StringUtils.getDouble(str);
-//        try
-//        {
-//            org.jb2011.lnf.beautyeye.BeautyEyeLNFHelper.launchBeautyEyeLNF();
-//        }
-//        catch(Exception e)
-//        {
-//            //TODO exception
-//        }
+
+    @GetMapping("prse")
+    public String prse( String ip) {
+//        return userService.find(id);
+        System.out.println(Ip2regionUtils.get(ip));
+        return JsonObjectUtils.toJson(Ip2regionUtils.parse(ip));
+    }
+
+    public static void main(String[] args) {
+
+        byte[] data = "我是一段测试字符串".getBytes();
+        Sign sign = SecureUtil.sign(SignAlgorithm.MD5withRSA);
+//签名
+        byte[] signed = sign.sign(data);
+//验证签名
+        boolean verify = sign.verify(data, signed);
+        System.out.println("--->>" + verify);
+        KeyPair rsa = SecureUtil.generateKeyPair("RSA");
+        System.out.println("===>>" +rsa.getPrivate());
+//        System.out.println("===>>" + SecureUtil.generateSignature(AsymmetricAlgorithm.RSA, DigestAlgorithm.SHA256));
     }
 }

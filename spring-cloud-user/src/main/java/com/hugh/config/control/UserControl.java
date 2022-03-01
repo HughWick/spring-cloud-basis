@@ -1,5 +1,6 @@
 package com.hugh.config.control;
 
+import com.github.hugh.util.ip.Ip2regionUtils;
 import com.hugh.config.model.User;
 import com.hugh.config.service.UserService;
 import org.springframework.beans.factory.annotation.Value;
@@ -27,6 +28,10 @@ public class UserControl {
     public User find(@PathVariable long id) {
         System.out.println("==端口=>" + port + "--线程--" + Thread.currentThread().getName());
         return userService.find(id);
+    }
+
+    public static void main(String[] args) {
+        System.out.println(Ip2regionUtils.get("222.244.144.131"));
     }
 
 }

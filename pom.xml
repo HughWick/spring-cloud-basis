@@ -2,26 +2,26 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-<!--    <parent>-->
-<!--        <groupId>org.springframework.boot</groupId>-->
-<!--        <artifactId>spring-boot-starter-parent</artifactId>-->
-<!--        <version>2.3.12.RELEASE</version>-->
-<!--        <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
-<!--    </parent>-->
+    <!--    <parent>-->
+    <!--        <groupId>org.springframework.boot</groupId>-->
+    <!--        <artifactId>spring-boot-starter-parent</artifactId>-->
+    <!--        <version>2.3.12.RELEASE</version>-->
+    <!--        <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
+    <!--    </parent>-->
 
     <groupId>com.hugh</groupId>
     <artifactId>spring-cloud</artifactId>
     <version>0.0.1</version>
     <name>${project.artifactId}</name>
     <packaging>pom</packaging>
-<!--    <description>spring-cloud-basis</description>-->
+    <!--    <description>spring-cloud-basis</description>-->
 
     <modules>
         <module>spring-cloud-eureka</module>
         <module>spring-cloud-user</module>
         <module>spring-cloud-gateway</module>
-<!--        <module>spring-cloud-feign</module>-->
-        <module>spring-Integration</module>
+        <!--        <module>spring-cloud-feign</module>-->
+        <module>spring-integration</module>
         <module>spring-cloud-config</module>
     </modules>
 
@@ -38,97 +38,32 @@
         <security.oauth.auto.version>2.1.2.RELEASE</security.oauth.auto.version>
         <flyway.version>5.2.4</flyway.version>
         <!-- mybatis Settings -->
-<!--        <mybatis-plus.version>3.3.2</mybatis-plus.version>-->
+        <!--        <mybatis-plus.version>3.3.2</mybatis-plus.version>-->
         <!--  阿里数据源   -->
         <druid-spring-boot-starter.version>1.1.22</druid-spring-boot-starter.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!--  其它 -->
         <hutool.version>4.5.10</hutool.version>
         <kaptcha.version>0.0.9</kaptcha.version>
-<!--        <velocity.version>1.7</velocity.version>-->
-<!--        <jasypt.version>2.1.0</jasypt.version>-->
+        <!--        <velocity.version>1.7</velocity.version>-->
+        <!--        <jasypt.version>2.1.0</jasypt.version>-->
         <jackson.modules>2.9.8</jackson.modules>
         <!--zipkin2.12.x需要此版本jooq-->
-<!--        <jooq.version>3.11.9</jooq.version>-->
-<!--        <zipkin.version>2.12.2</zipkin.version>-->
-<!--        <zipkin-storage-mysql.version>2.8.4</zipkin-storage-mysql.version>-->
-<!--        <quartz.version>2.3.2</quartz.version>-->
-        <toolbox-all.version>2.1.9</toolbox-all.version>
+        <!--        <jooq.version>3.11.9</jooq.version>-->
+        <!--        <zipkin.version>2.12.2</zipkin.version>-->
+        <!--        <zipkin-storage-mysql.version>2.8.4</zipkin-storage-mysql.version>-->
+        <!--        <quartz.version>2.3.2</quartz.version>-->
+        <toolbox-all.version>2.2.0</toolbox-all.version>
     </properties>
 
     <dependencies>
-        <!--配置文件处理器-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-configuration-processor</artifactId>-->
-<!--            <optional>true</optional>-->
-<!--        </dependency>-->
-<!--        <dependency>-->
-<!--            <groupId>com.github.ulisesbocchio</groupId>-->
-<!--            <artifactId>jasypt-spring-boot-starter</artifactId>-->
-<!--            <version>${jasypt.version}</version>-->
-<!--        </dependency>-->
-        <!--监控-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.boot</groupId>-->
-<!--            <artifactId>spring-boot-starter-actuator</artifactId>-->
-<!--        </dependency>-->
-        <!--监控客户端-->
-<!--        <dependency>-->
-<!--            <groupId>de.codecentric</groupId>-->
-<!--            <artifactId>spring-boot-admin-starter-client</artifactId>-->
-<!--            <version>${spring-boot-admin.version}</version>-->
-<!--        </dependency>-->
-        <!--服务链路追踪-->
-<!--        <dependency>-->
-<!--            <groupId>org.springframework.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-starter-sleuth</artifactId>-->
-<!--        </dependency>-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework.cloud</groupId>-->
-        <!--            <artifactId>spring-cloud-sleuth-zipkin</artifactId>-->
-        <!--        </dependency>-->
-        <!--断路器依赖-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework.cloud</groupId>-->
-        <!--            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>-->
-        <!--        </dependency>-->
         <!--Lombok-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
             <scope>provided</scope>
         </dependency>
-        <!--测试依赖-->
-        <!--        <dependency>-->
-        <!--            <groupId>org.springframework.boot</groupId>-->
-        <!--            <artifactId>spring-boot-starter-test</artifactId>-->
-        <!--            <scope>test</scope>-->
-        <!--        </dependency>-->
-        <!-- https://mvnrepository.com/artifact/org.quartz-scheduler/quartz -->
-<!--        <dependency>-->
-<!--            <groupId>org.quartz-scheduler</groupId>-->
-<!--            <artifactId>quartz</artifactId>-->
-<!--            <version>${quartz.version}</version>-->
-<!--        </dependency>-->
-        <!-- https://mvnrepository.com/artifact/org.apache.shiro/shiro-spring -->
-<!--        <dependency>-->
-<!--            <groupId>org.apache.shiro</groupId>-->
-<!--            <artifactId>shiro-spring</artifactId>-->
-<!--            <version>1.5.3</version>-->
-<!--        </dependency>-->
-        <!-- https://mvnrepository.com/artifact/org.crazycake/shiro-redis -->
-<!--        <dependency>-->
-<!--            <groupId>org.crazycake</groupId>-->
-<!--            <artifactId>shiro-redis</artifactId>-->
-<!--            <version>3.1.0</version>-->
-<!--            <exclusions>-->
-<!--                <exclusion>-->
-<!--                    <artifactId>shiro-core</artifactId>-->
-<!--                    <groupId>org.apache.shiro</groupId>-->
-<!--                </exclusion>-->
-<!--            </exclusions>-->
-<!--        </dependency>-->
+
     </dependencies>
 
     <dependencyManagement>
@@ -186,16 +121,16 @@
                 <version>${druid-spring-boot-starter.version}</version>
             </dependency>
             <!--mybatis-->
-<!--            <dependency>-->
-<!--                <groupId>com.baomidou</groupId>-->
-<!--                <artifactId>mybatis-plus</artifactId>-->
-<!--                <version>${mybatis-plus.version}</version>-->
-<!--            </dependency>-->
-<!--            <dependency>-->
-<!--                <groupId>com.baomidou</groupId>-->
-<!--                <artifactId>mybatis-plus-boot-starter</artifactId>-->
-<!--                <version>${mybatis-plus.version}</version>-->
-<!--            </dependency>-->
+            <!--            <dependency>-->
+            <!--                <groupId>com.baomidou</groupId>-->
+            <!--                <artifactId>mybatis-plus</artifactId>-->
+            <!--                <version>${mybatis-plus.version}</version>-->
+            <!--            </dependency>-->
+            <!--            <dependency>-->
+            <!--                <groupId>com.baomidou</groupId>-->
+            <!--                <artifactId>mybatis-plus-boot-starter</artifactId>-->
+            <!--                <version>${mybatis-plus.version}</version>-->
+            <!--            </dependency>-->
             <dependency>
                 <groupId>com.baomidou</groupId>
                 <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
@@ -216,66 +151,65 @@
         <finalName>${project.name}</finalName>
         <pluginManagement>
             <plugins>
-<!--                <plugin>-->
-<!--                    <groupId>org.springframework.boot</groupId>-->
-<!--                    <artifactId>spring-boot-maven-plugin</artifactId>-->
-<!--                    <version>${spring-boot.version}</version>-->
-<!--                    <configuration>-->
-<!--                        <finalName>${project.build.finalName}</finalName>-->
-<!--                    </configuration>-->
-<!--                    <executions>-->
-<!--                        <execution>-->
-<!--                            <goals>-->
-<!--                                <goal>repackage</goal>-->
-<!--                            </goals>-->
-<!--                        </execution>-->
-<!--                    </executions>-->
-<!--                </plugin>-->
-                <!--                <plugin>-->
-                <!--                    <groupId>com.spotify</groupId>-->
-                <!--                    <artifactId>docker-maven-plugin</artifactId>-->
-                <!--                    <version>0.4.12</version>-->
-                <!--                    <configuration>-->
-                <!--                        <imageName>${registry.url}/${project.name}:0.0.1</imageName>-->
-                <!--                        <dockerHost>${docker.url}</dockerHost>-->
-                <!--                        <dockerDirectory>${project.basedir}</dockerDirectory>-->
-                <!--                        <resources>-->
-                <!--                            <resource>-->
-                <!--                                <targetPath>/</targetPath>-->
-                <!--                                <directory>${project.build.directory}</directory>-->
-                <!--                                <include>${project.build.finalName}.jar</include>-->
-                <!--                            </resource>-->
-                <!--                        </resources>-->
-                <!--                        <serverId>docker-hub</serverId>-->
-                <!--                        <registryUrl>https://index.docker.io/v1/</registryUrl>-->
-                <!--                    </configuration>-->
-                <!--                </plugin>-->
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                    <version>${spring-boot.version}</version>
+                    <configuration>
+                        <finalName>${project.build.finalName}</finalName>
+                        <excludes>
+                            <exclude>
+                                <groupId>org.springframework.boot</groupId>
+                                <artifactId>spring-boot-configuration-processor</artifactId>
+                            </exclude>
+                        </excludes>
+                    </configuration>
+                    <executions>
+                        <execution>
+                            <goals>
+                                <goal>repackage</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>3.8.0</version>
+                    <configuration>
+                        <target>${maven.compiler.target}</target>
+                        <source>${maven.compiler.source}</source>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                        <compilerArguments>
+                            <extdirs>${project.basedir}/src/main/webapp/WEB-INF/lib</extdirs>
+                        </compilerArguments>
+                    </configuration>
+                </plugin>
+
+                <!-- maven 打包跳过test文件-->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-surefire-plugin</artifactId>
+                    <version>2.4.2</version>
+                    <configuration>
+                        <skipTests>true</skipTests>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>2.4</version>
+                    <!--                    <configuration>-->
+                    <!--                        <archive>-->
+                    <!--                            <manifest>-->
+                    <!--                                <useUniqueVersions>false</useUniqueVersions>-->
+                    <!--                                <addClasspath>true</addClasspath>-->
+                    <!--                                <classpathPrefix>lib/</classpathPrefix>-->
+                    <!--                            </manifest>-->
+                    <!--                        </archive>-->
+                    <!--                    </configuration>-->
+                </plugin>
             </plugins>
         </pluginManagement>
-        <plugins>
-            <plugin>
-                <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.8.0</version>
-                <configuration>
-                    <target>${maven.compiler.target}</target>
-                    <source>${maven.compiler.source}</source>
-                    <encoding>${project.build.sourceEncoding}</encoding>
-                </configuration>
-            </plugin>
-<!--            <plugin>-->
-<!--                <groupId>pl.project13.maven</groupId>-->
-<!--                <artifactId>git-commit-id-plugin</artifactId>-->
-<!--                <version>2.2.5</version>-->
-<!--            </plugin>-->
-            <!-- maven 打包跳过test文件-->
-            <plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-surefire-plugin</artifactId>
-                <version>2.4.2</version>
-                <configuration>
-                    <skipTests>true</skipTests>
-                </configuration>
-            </plugin>
-        </plugins>
     </build>
 </project>
