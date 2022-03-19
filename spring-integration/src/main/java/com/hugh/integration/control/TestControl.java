@@ -15,7 +15,7 @@ public class TestControl {
     @GetMapping("/hello")
     public void test01(){
 //        System.out.println("===");
-        log.info("测试自动化部署！~！");
+        log.info("测试提交git后，自动化部署！~！");
     }
 
 }
