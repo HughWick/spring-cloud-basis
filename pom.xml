@@ -2,25 +2,16 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <!--    <parent>-->
-    <!--        <groupId>org.springframework.boot</groupId>-->
-    <!--        <artifactId>spring-boot-starter-parent</artifactId>-->
-    <!--        <version>2.3.12.RELEASE</version>-->
-    <!--        <relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
-    <!--    </parent>-->
-
     <groupId>com.hugh</groupId>
     <artifactId>spring-cloud</artifactId>
     <version>0.0.1</version>
     <name>${project.artifactId}</name>
     <packaging>pom</packaging>
-    <!--    <description>spring-cloud-basis</description>-->
 
     <modules>
         <module>spring-cloud-eureka</module>
         <module>spring-cloud-user</module>
         <module>spring-cloud-gateway</module>
-        <!--        <module>spring-cloud-feign</module>-->
         <module>spring-integration</module>
         <module>spring-cloud-config</module>
     </modules>
@@ -45,14 +36,7 @@
         <!--  其它 -->
         <hutool.version>4.5.10</hutool.version>
         <kaptcha.version>0.0.9</kaptcha.version>
-        <!--        <velocity.version>1.7</velocity.version>-->
-        <!--        <jasypt.version>2.1.0</jasypt.version>-->
         <jackson.modules>2.9.8</jackson.modules>
-        <!--zipkin2.12.x需要此版本jooq-->
-        <!--        <jooq.version>3.11.9</jooq.version>-->
-        <!--        <zipkin.version>2.12.2</zipkin.version>-->
-        <!--        <zipkin-storage-mysql.version>2.8.4</zipkin-storage-mysql.version>-->
-        <!--        <quartz.version>2.3.2</quartz.version>-->
         <toolbox-all.version>2.2.0</toolbox-all.version>
     </properties>
 
@@ -75,13 +59,6 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-            <!--            <dependency>-->
-            <!--                <groupId>io.spring.platform</groupId>-->
-            <!--                <artifactId>platform-bom</artifactId>-->
-            <!--                <version>${spring-platform.version}</version>-->
-            <!--                <type>pom</type>-->
-            <!--                <scope>import</scope>-->
-            <!--            </dependency>-->
             <dependency>
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-dependencies</artifactId>
@@ -199,15 +176,6 @@
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-jar-plugin</artifactId>
                     <version>2.4</version>
-                    <!--                    <configuration>-->
-                    <!--                        <archive>-->
-                    <!--                            <manifest>-->
-                    <!--                                <useUniqueVersions>false</useUniqueVersions>-->
-                    <!--                                <addClasspath>true</addClasspath>-->
-                    <!--                                <classpathPrefix>lib/</classpathPrefix>-->
-                    <!--                            </manifest>-->
-                    <!--                        </archive>-->
-                    <!--                    </configuration>-->
                 </plugin>
             </plugins>
         </pluginManagement>
