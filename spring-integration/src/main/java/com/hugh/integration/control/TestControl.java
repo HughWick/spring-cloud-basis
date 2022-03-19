@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("test")
 public class TestControl {
 
-    @GetMapping("/lock")
+    @GetMapping("/hello")
     public void test01(){
 //        System.out.println("===");
         log.info("测试自动化部署！~！");
