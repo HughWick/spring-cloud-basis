@@ -14,7 +14,7 @@ public class TestControl {
 
     @GetMapping("/hello")
     public void test01(){
-        System.out.println("==123=");
+        System.out.println("==123是分公司的=");
         log.info("测试提交git后，自动化部署！~！");
     }
 
