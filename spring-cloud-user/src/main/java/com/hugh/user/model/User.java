@@ -1,4 +1,4 @@
-package com.hugh.config.model;
+package com.hugh.user.model;
 
 import lombok.Data;
 

@@ -1,9 +1,10 @@
-package com.hugh.config.control;
+package com.hugh.user.control;
 
 import com.github.hugh.util.ip.Ip2regionUtils;
-import com.hugh.config.model.User;
-import com.hugh.config.service.UserService;
+import com.hugh.user.model.User;
+import com.hugh.user.service.UserService;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -24,7 +25,7 @@ public class UserControl {
     @Resource
     private UserService userService;
 
-    @RequestMapping("/simple/{id}")
+    @GetMapping("/simple/{id}")
     public User find(@PathVariable long id) {
         System.out.println("==端口=>" + port + "--线程--" + Thread.currentThread().getName());
         return userService.find(id);

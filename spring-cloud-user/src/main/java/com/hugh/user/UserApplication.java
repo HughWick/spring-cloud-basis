@@ -1,13 +1,12 @@
-package com.hugh.config;
+package com.hugh.user;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.cloud.netflix.eureka.EnableEurekaClient;
 
 /**
  * 用户微服务
  */
-@EnableEurekaClient
+//@EnableEurekaClient
 @SpringBootApplication
 public class UserApplication {
 

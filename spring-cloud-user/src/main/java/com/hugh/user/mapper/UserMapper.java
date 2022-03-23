@@ -1,7 +1,7 @@
-package com.hugh.config.mapper;
+package com.hugh.user.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.hugh.config.model.User;
+import com.hugh.user.model.User;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

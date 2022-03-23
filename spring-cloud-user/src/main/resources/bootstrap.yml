@@ -1,5 +1,5 @@
 server:
-  port: 7901
+  port: 7900
 spring:
   application:
     name: spring-cloud-user # 应用名称，会在Eureka中显示
@@ -16,10 +16,9 @@ spring:
     baseline-version: 1
   datasource:
     druid:
-#      url: jdbc:mysql://192.168.1.47:3306/test_store?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=PRC
-      url: jdbc:mysql://129.154.63.61:4139/test_store?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=PRC
+      url: jdbc:mysql://43.128.14.188:4139/user?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=PRC
       username: root
-      password: password123@
+      password: password123
       driverClassName: com.mysql.cj.jdbc.Driver
       initialSize: 5 # 初始建立连接数量
       minIdle: 5  # 最小连接数量
@@ -29,9 +28,17 @@ spring:
       testOnReturn: false # 归还连接时检测连接是否有效
       timeBetweenEvictionRunsMillis: 60000 # 配置间隔检测连接是否有效的时间（单位是毫秒）
       minEvictableIdleTimeMillis: 300000   # 连接在连接池的最小生存时间（毫秒）
-eureka:
-  instance:
-    prefer-ip-address: true
-  client:
-    service-url: # EurekaServer的地址
-      defaultZone: http://user:password123@localhost:8761/eureka
+#api 自动文档配置
+knife4j:
+  enable: true
+  documents:
+    - group: 3.X
+      name: 测试自定义标题分组
+      # 某一个文件夹下所有的.md文件
+      locations: classpath:markdown/*
+#eureka:
+#  instance:
+#    prefer-ip-address: true
+#  client:
+#    service-url: # EurekaServer的地址
+#      defaultZone: http://user:password123@localhost:8761/eureka
