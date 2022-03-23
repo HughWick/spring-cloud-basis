@@ -1,7 +1,9 @@
 package com.hugh.user.control;
 
+import com.github.hugh.util.EntityUtils;
 import com.github.hugh.util.ip.Ip2regionUtils;
 import com.hugh.user.model.User;
+import com.hugh.user.model.vo.UserVO;
 import com.hugh.user.service.UserService;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -26,9 +28,10 @@ public class UserControl {
     private UserService userService;
 
     @GetMapping("/simple/{id}")
-    public User find(@PathVariable long id) {
+    public UserVO find(@PathVariable long id) {
         System.out.println("==端口=>" + port + "--线程--" + Thread.currentThread().getName());
-        return userService.find(id);
+        User user = userService.find(id);
+        return EntityUtils.copy(user , UserVO::new);
     }
 
     public static void main(String[] args) {
