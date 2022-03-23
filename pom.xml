@@ -24,12 +24,14 @@
         <spring-boot.version>2.3.12.RELEASE</spring-boot.version>
         <spring-cloud.version>Hoxton.SR12</spring-cloud.version>
         <spring-boot-admin.version>2.1.4</spring-boot-admin.version>
-        <!--        <spring-platform.version>Cairo-SR7</spring-platform.version>-->
         <security.oauth.version>2.3.5.RELEASE</security.oauth.version>
         <security.oauth.auto.version>2.1.2.RELEASE</security.oauth.auto.version>
         <flyway.version>5.2.4</flyway.version>
-        <!-- mybatis Settings -->
-        <!--        <mybatis-plus.version>3.3.2</mybatis-plus.version>-->
+        <!--    shiro    -->
+        <shiro-spring.version>1.8.0</shiro-spring.version>
+        <shiro-redis.version>3.3.1</shiro-redis.version>
+<!--        <shiro-spring.version>1.5.3</shiro-spring.version>-->
+<!--        <shiro-redis.version>3.3.1</shiro-redis.version>-->
         <!--  阿里数据源   -->
         <druid-spring-boot-starter.version>1.1.22</druid-spring-boot-starter.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -97,23 +99,23 @@
                 <artifactId>druid-spring-boot-starter</artifactId>
                 <version>${druid-spring-boot-starter.version}</version>
             </dependency>
-            <!--mybatis-->
-            <!--            <dependency>-->
-            <!--                <groupId>com.baomidou</groupId>-->
-            <!--                <artifactId>mybatis-plus</artifactId>-->
-            <!--                <version>${mybatis-plus.version}</version>-->
-            <!--            </dependency>-->
-            <!--            <dependency>-->
-            <!--                <groupId>com.baomidou</groupId>-->
-            <!--                <artifactId>mybatis-plus-boot-starter</artifactId>-->
-            <!--                <version>${mybatis-plus.version}</version>-->
-            <!--            </dependency>-->
+            <!--        shiro 权限框架      -->
             <dependency>
-                <groupId>com.baomidou</groupId>
-                <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
-                <version>2.5.4</version>
+                <groupId>org.apache.shiro</groupId>
+                <artifactId>shiro-spring-boot-web-starter</artifactId>
+                <version>${shiro-spring.version}</version>
             </dependency>
-
+            <dependency>
+                <groupId>org.crazycake</groupId>
+                <artifactId>shiro-redis</artifactId>
+                <version>${shiro-redis.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.puppycrawl.tools</groupId>
+                        <artifactId>checkstyle</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
             <!-- 私人工具包 https://mvnrepository.com/artifact/com.github.hughwick/toolbox -->
             <dependency>
                 <groupId>com.github.hughwick</groupId>
