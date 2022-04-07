@@ -11,6 +11,7 @@
     <modules>
         <module>spring-cloud-eureka</module>
         <module>spring-cloud-user</module>
+        <module>spring-cloud-minio</module>
         <module>spring-cloud-gateway</module>
         <module>spring-integration</module>
         <module>spring-cloud-config</module>
@@ -30,8 +31,6 @@
         <!--    shiro    -->
         <shiro-spring.version>1.8.0</shiro-spring.version>
         <shiro-redis.version>3.3.1</shiro-redis.version>
-<!--        <shiro-spring.version>1.5.3</shiro-spring.version>-->
-<!--        <shiro-redis.version>3.3.1</shiro-redis.version>-->
         <!--  阿里数据源   -->
         <druid-spring-boot-starter.version>1.1.22</druid-spring-boot-starter.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -39,7 +38,11 @@
         <hutool.version>4.5.10</hutool.version>
         <kaptcha.version>0.0.9</kaptcha.version>
         <jackson.modules>2.9.8</jackson.modules>
-        <toolbox-all.version>2.2.0</toolbox-all.version>
+        <minio.version>7.0.1</minio.version>
+        <commons-io.version>2.6</commons-io.version>
+
+        <toolbox-all.version>2.2.1</toolbox-all.version>
+
     </properties>
 
     <dependencies>
@@ -121,6 +124,16 @@
                 <groupId>com.github.hughwick</groupId>
                 <artifactId>toolbox-all</artifactId>
                 <version>${toolbox-all.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.minio</groupId>
+                <artifactId>minio</artifactId>
+                <version>${minio.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
