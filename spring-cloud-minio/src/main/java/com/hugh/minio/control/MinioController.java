@@ -63,6 +63,16 @@ public class MinioController {
         if (file == null || file.length == 0) {
             return new ResultDTO<>("0001", "上传文件不能为空");
         }
+        try {
+            // 检查存储桶是否已经存在
+            boolean isExist = minioClient.bucketExists(MINIO_BUCKET);
+            if (!isExist) {
+                // 创建一个名为asiatrip的存储桶，用于存储照片的zip文件。
+                minioClient.makeBucket(MINIO_BUCKET);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
         List<String> orgfileNameList = new ArrayList<>(file.length);
         for (MultipartFile multipartFile : file) {
             String orgfileName = multipartFile.getOriginalFilename();
@@ -76,7 +86,7 @@ public class MinioController {
                 return new ResultDTO<>("0001", "上传失败");
             }
         }
-        Map<String, Object> data = new HashMap<String, Object>();
+        Map<String, Object> data = new HashMap<>();
         data.put("bucketName", MINIO_BUCKET);
         data.put("fileName", orgfileNameList);
         return new ResultDTO<>("0000", "上传成功", data);
@@ -119,6 +129,7 @@ public class MinioController {
 
     /**
      * 文件大小计算
+     *
      * @param fileS
      * @return
      */

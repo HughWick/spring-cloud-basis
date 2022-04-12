@@ -27,7 +27,7 @@
         <spring-boot-admin.version>2.1.4</spring-boot-admin.version>
         <security.oauth.version>2.3.5.RELEASE</security.oauth.version>
         <security.oauth.auto.version>2.1.2.RELEASE</security.oauth.auto.version>
-        <flyway.version>5.2.4</flyway.version>
+<!--        <flyway.version>7.15.0</flyway.version>-->
         <!--    shiro    -->
         <shiro-spring.version>1.8.0</shiro-spring.version>
         <shiro-redis.version>3.3.1</shiro-redis.version>
@@ -89,12 +89,6 @@
                 <version>${jackson.modules}</version>
                 <type>pom</type>
                 <scope>import</scope>
-            </dependency>
-            <!--flywaydb依赖-->
-            <dependency>
-                <groupId>org.flywaydb</groupId>
-                <artifactId>flyway-core</artifactId>
-                <version>${flyway.version}</version>
             </dependency>
             <!-- 数据源配置 -->
             <dependency>
