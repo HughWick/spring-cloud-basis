@@ -1,5 +1,6 @@
 package com.hugh.user.control;
 
+import com.github.hugh.bean.dto.Ip2regionDTO;
 import com.github.hugh.bean.dto.ResultDTO;
 import com.github.hugh.util.EntityUtils;
 import com.github.hugh.util.ip.Ip2regionUtils;
@@ -35,7 +36,7 @@ public class UserControl {
     public UserVO find(@PathVariable long id) {
         System.out.println("==端口=>" + port + "--线程--" + Thread.currentThread().getName());
         User user = userService.find(id);
-        return EntityUtils.copy(user , UserVO::new);
+        return EntityUtils.copy(user, UserVO::new);
     }
 
     @PostMapping("/login")
@@ -58,8 +59,8 @@ public class UserControl {
         return new ResultDTO("0000", "登陆成功");
     }
 
-    public static void main(String[] args) {
-        System.out.println(Ip2regionUtils.get("222.244.144.131"));
+    @GetMapping("/parseIp/{ip}")
+    public Ip2regionDTO find(@PathVariable String ip) {
+        return Ip2regionUtils.parse(ip);
     }
-
 }

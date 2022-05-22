@@ -18,7 +18,7 @@ spring:
 #    driverClassName: com.mysql.cj.jdbc.Driver
 #    type: com.alibaba.druid.pool.DruidDataSource
     druid:
-      url: jdbc:mariadb://192.18.132.67:4139/user?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=PRC
+      url: jdbc:mariadb://43.128.14.188:4141/user?useUnicode=true&characterEncoding=utf-8&useSSL=false&serverTimezone=PRC
       username: root
       password: password123
       driverClassName: org.mariadb.jdbc.Driver

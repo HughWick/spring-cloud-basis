@@ -4,13 +4,16 @@ import cn.hutool.crypto.SecureUtil;
 import cn.hutool.crypto.asymmetric.Sign;
 import cn.hutool.crypto.asymmetric.SignAlgorithm;
 import com.github.hugh.aop.constraints.IpV4;
-import com.github.hugh.util.gson.JsonObjectUtils;
+import com.github.hugh.json.gson.JsonObjectUtils;
 import com.github.hugh.util.ip.Ip2regionUtils;
 import com.google.common.base.Throwables;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.integration.redis.util.RedisLockRegistry;
 import org.springframework.validation.annotation.Validated;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -109,10 +112,10 @@ public class RedisController {
     }
 
 
-    @GetMapping("prse")
-    public String prse( String ip) {
+    @GetMapping("parse")
+    public String parse( String ip) {
 //        return userService.find(id);
-        System.out.println(Ip2regionUtils.get(ip));
+        System.out.println(Ip2regionUtils.parse(ip));
         return JsonObjectUtils.toJson(Ip2regionUtils.parse(ip));
     }
 
