@@ -11,6 +11,7 @@
     <packaging>jar</packaging>
     <artifactId>spring-integration</artifactId>
     <description>spring 分布式锁</description>
+    <version>0.0.1</version>
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -47,7 +48,12 @@
             <artifactId>hutool-all</artifactId>
             <version>5.7.19</version>
         </dependency>
-
+        <dependency>
+            <groupId>net.sf.json-lib</groupId>
+            <artifactId>json-lib</artifactId>
+<!--            <version>${json-lib.version}</version>-->
+            <classifier>jdk15</classifier>
+        </dependency>
         <!-- https://mvnrepository.com/artifact/io.minio/minio -->
 <!--        <dependency>-->
 <!--            <groupId>io.minio</groupId>-->

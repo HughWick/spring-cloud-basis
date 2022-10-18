@@ -1,14 +1,13 @@
 package com.hugh.integration.control;
 
-import cn.hutool.crypto.SecureUtil;
-import cn.hutool.crypto.asymmetric.Sign;
-import cn.hutool.crypto.asymmetric.SignAlgorithm;
 import com.github.hugh.aop.constraints.IpV4;
+import com.github.hugh.bean.dto.Ip2regionDTO;
 import com.github.hugh.json.gson.JsonObjectUtils;
 import com.github.hugh.util.ip.Ip2regionUtils;
 import com.google.common.base.Throwables;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.integration.redis.util.RedisLockRegistry;
+import org.springframework.util.StopWatch;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -17,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
-import java.security.KeyPair;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -114,22 +112,11 @@ public class RedisController {
 
     @GetMapping("parse")
     public String parse( String ip) {
-//        return userService.find(id);
-        System.out.println(Ip2regionUtils.parse(ip));
-        return JsonObjectUtils.toJson(Ip2regionUtils.parse(ip));
-    }
-
-    public static void main(String[] args) {
-
-        byte[] data = "我是一段测试字符串".getBytes();
-        Sign sign = SecureUtil.sign(SignAlgorithm.MD5withRSA);
-//签名
-        byte[] signed = sign.sign(data);
-//验证签名
-        boolean verify = sign.verify(data, signed);
-        System.out.println("--->>" + verify);
-        KeyPair rsa = SecureUtil.generateKeyPair("RSA");
-        System.out.println("===>>" +rsa.getPrivate());
-//        System.out.println("===>>" + SecureUtil.generateSignature(AsymmetricAlgorithm.RSA, DigestAlgorithm.SHA256));
+        StopWatch stopWatch =new StopWatch("解析IP");
+        stopWatch.start();
+        Ip2regionDTO ip2regionDTO = Ip2regionUtils.parse(ip);
+        stopWatch.stop();
+        System.out.println(stopWatch.prettyPrint());
+        return JsonObjectUtils.toJson(ip2regionDTO);
     }
 }

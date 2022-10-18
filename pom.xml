@@ -23,13 +23,12 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <!-- Spring Settings -->
         <spring-boot.version>2.3.12.RELEASE</spring-boot.version>
-<!--        <spring-boot.version>2.5.12</spring-boot.version>-->
+        <!--        <spring-boot.version>2.5.12</spring-boot.version>-->
         <spring-cloud.version>Hoxton.SR12</spring-cloud.version>
-<!--        <spring-cloud.version>2020.0.5</spring-cloud.version>-->
+        <!--        <spring-cloud.version>2020.0.5</spring-cloud.version>-->
         <spring-boot-admin.version>2.1.4</spring-boot-admin.version>
         <security.oauth.version>2.3.5.RELEASE</security.oauth.version>
         <security.oauth.auto.version>2.1.2.RELEASE</security.oauth.auto.version>
-<!--        <flyway.version>7.15.0</flyway.version>-->
         <!--    shiro    -->
         <shiro-spring.version>1.8.0</shiro-spring.version>
         <shiro-redis.version>3.3.1</shiro-redis.version>
@@ -38,11 +37,13 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!--  其它 -->
         <hutool.version>4.5.10</hutool.version>
+        <json-lib.version>2.4</json-lib.version>
         <kaptcha.version>0.0.9</kaptcha.version>
         <jackson.modules>2.9.8</jackson.modules>
         <minio.version>7.0.1</minio.version>
         <commons-io.version>2.6</commons-io.version>
-        <toolbox-all.version>2.3.0</toolbox-all.version>
+        <commons-collections4.version>4.4</commons-collections4.version>
+        <toolbox-all.version>2.3.9</toolbox-all.version>
     </properties>
 
     <dependencies>
@@ -128,6 +129,17 @@
                 <groupId>commons-io</groupId>
                 <artifactId>commons-io</artifactId>
                 <version>${commons-io.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-collections4</artifactId>
+                <version>${commons-collections4.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>net.sf.json-lib</groupId>
+                <artifactId>json-lib</artifactId>
+                <version>${json-lib.version}</version>
+                <classifier>jdk15</classifier>
             </dependency>
         </dependencies>
     </dependencyManagement>
