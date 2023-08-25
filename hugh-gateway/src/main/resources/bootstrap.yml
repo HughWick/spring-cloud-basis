@@ -1,0 +1,37 @@
+
+spring:
+  application:
+    name: car-gateway # 应用名称
+  cloud:
+    nacos:
+      config:
+        #nacos服务如果启动权限配置用户名信息 nacos.core.auth.enabled=false
+        #        username: nacos
+        #        password: nacos
+        # 服务器地址
+        server-addr: @nacosServerAddr@
+        # 命名空间，用作环境隔离
+        namespace: @nacosNameSpace@
+        # 分组，一般按照项目进行分组
+        group: @nacosGroup@
+        # 文件后缀
+        file-extension: yml
+      discovery:
+        # nacos服务地址
+        server-addr: @nacosServerAddr@
+        # 命名空间
+        namespace: @nacosNameSpace@
+
+#hystrix:
+#  command:
+#    default:
+#      execution:
+#        isolation:
+#          thread:
+#            timeoutInMilliseconds: 6000
+#ribbon:
+#  ConnectTimeout: 1000
+#  ReadTimeout: 2000
+#  MaxAutoRetries: 0
+#  MaxAutoRetriesNextServer: 0
+
