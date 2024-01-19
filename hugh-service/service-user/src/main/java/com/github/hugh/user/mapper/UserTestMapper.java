@@ -1,4 +1,4 @@
-package com.github.hugh.service.system.mapper;
+package com.github.hugh.user.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.github.hugh.system.dao.UserTestDo;

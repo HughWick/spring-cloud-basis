@@ -4,6 +4,7 @@ import com.alibaba.druid.spring.boot.autoconfigure.DruidDataSourceAutoConfigure;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
+import org.springframework.boot.autoconfigure.mongo.MongoAutoConfiguration;
 
 
 /**
@@ -13,10 +14,11 @@ import org.springframework.boot.autoconfigure.jdbc.DataSourceAutoConfiguration;
  */
 @SpringBootApplication(exclude = {
         DataSourceAutoConfiguration.class,
-        DruidDataSourceAutoConfigure.class
+        DruidDataSourceAutoConfigure.class,
+        MongoAutoConfiguration.class
 }, scanBasePackages = "com.github.hugh")
-public class AuthApplication {
+public class HughAuthApplication {
     public static void main(String[] args) {
-        SpringApplication.run(AuthApplication.class, args);
+        SpringApplication.run(HughAuthApplication.class, args);
     }
 }

@@ -1,15 +1,18 @@
 package com.github.hugh.service.system.contorl;
 
 import com.github.hugh.service.system.mapper.UserTestMapper;
+import com.github.hugh.system.dao.UserTestDo;
+import com.github.hugh.util.RandomUtils;
 import io.seata.core.context.RootContext;
-import io.seata.spring.annotation.GlobalTransactional;
 import io.swagger.annotations.Api;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.Date;
 
 /**
  * @author AS
@@ -24,20 +27,20 @@ public class UserControl {
     @Resource
     private UserTestMapper userTestMapper;
 
-//    @GlobalTransactional(rollbackFor = Exception.class)
-    @GetMapping("get")
-    public String get(String username) {
+    //    @GlobalTransactional(rollbackFor = Exception.class)
+    @PostMapping("insert")
+    public String insert(@RequestBody UserTestDo userTestDo) {
         log.info("系统服务，用户服务获取根ID：{}", RootContext.getXID());
-//        QueryWrapper<UserTestBo> query = Wrappers.query();
-//        query.eq("name", username);
-//        UserTestBo userTestBo = userTestMapper.selectOne(query);
-//        userTestBo.setStatus(99);
-//        userTestMapper.updateById(userTestBo);
-        test01();
-        return "用户信息：" + username;
+//        UserTestDo userTestDo = new UserTestDo();
+//        userTestDo.setName(username);
+        userTestDo.setAge(RandomUtils.randomInt(1, 90));
+        userTestDo.setStatus(0);
+        userTestDo.setCreated(new Date());
+        userTestMapper.insert(userTestDo);
+        return "用户信息：" + userTestDo.getName();
     }
 
-//    @GlobalTransactional(rollbackFor = Exception.class)
+    //    @GlobalTransactional(rollbackFor = Exception.class)
     private void test01() {
         int i = 1 / 0;
     }

@@ -4,15 +4,15 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <groupId>com.github.hugh</groupId>
-        <artifactId>hugh-service-api</artifactId>
+        <artifactId>hugh-service</artifactId>
         <version>1.0.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
-    <artifactId>service-system-api</artifactId>
-    <description>feign api系统服务</description>
+    <artifactId>service-user</artifactId>
+    <description>系统用户服务</description>
     <packaging>jar</packaging>
     <properties>
-<!--        <start-class>com.github.hugh.service.system.CarSystemApplication</start-class>-->
+        <start-class>com.github.hugh.user.UserApplication</start-class>
     </properties>
 
     <dependencies>
@@ -24,6 +24,15 @@
             <groupId>com.github.hugh</groupId>
             <artifactId>common-core</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.github.hugh</groupId>
+            <artifactId>service-system-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.github.hugh</groupId>
+            <artifactId>pojo-system</artifactId>
+        </dependency>
+
         <!-- springboot web -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -45,10 +54,20 @@
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
         <!-- SpringCloud Alibaba Sentinel -->
-<!--        <dependency>-->
-<!--            <groupId>com.alibaba.cloud</groupId>-->
-<!--            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>-->
-<!--        </dependency>-->
+         <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-sentinel</artifactId>
+        </dependency>
+        <!--   Spring Cloud Nacos 2021以后就没有在默认使用Ribbon作为负载均衡器了     -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-loadbalancer</artifactId>
+        </dependency>
+        <!-- seata -->
+        <dependency>
+            <groupId>com.alibaba.cloud</groupId>
+            <artifactId>spring-cloud-starter-alibaba-seata</artifactId>
+        </dependency>
         <!-- openFeign -->
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -68,28 +87,7 @@
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
         </dependency>
-        <dependency>
-            <groupId>com.github.hugh</groupId>
-            <artifactId>pojo-system</artifactId>
-        </dependency>
     </dependencies>
-    <profiles>
-        <profile>
-            <!--开发环境-->
-            <id>dev</id>
-            <properties>
-                <!-- 环境标识，需要与配置文件的名称相对应 -->
-                <profileActive>dev</profileActive>
-                <!--  spring nacos 配置相关-->
-                <nacosServerAddr>${nacos-server-addr}</nacosServerAddr>
-                <nacosNameSpace>${nacos-name-space-dev}</nacosNameSpace>
-                <nacosGroup>DEFAULT_GROUP</nacosGroup>
-            </properties>
-            <activation>
-                <activeByDefault>true</activeByDefault>
-            </activation>
-        </profile>
-    </profiles>
     <build>
         <plugins>
             <plugin>

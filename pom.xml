@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.hugh</groupId>
-    <artifactId>cloud-example</artifactId>
+    <artifactId>spring-cloud-basis</artifactId>
     <version>1.0.0</version>
     <packaging>pom</packaging>
     <description>spring cloud 微服务基础框架 </description>
@@ -37,7 +37,7 @@
         <netty.version>4.1.86.Final</netty.version>
         <druid.version>1.2.15</druid.version>
         <mysql.version>8.0.31</mysql.version>
-        <toolbox-all.version>2.6.1</toolbox-all.version>
+        <toolbox-all.version>2.7.1</toolbox-all.version>
         <easyexcel.version>2.2.11</easyexcel.version>
         <!--    test powermock 版本号与mockito版本号对等  -->
         <powermock.version>2.0.2</powermock.version>
@@ -178,6 +178,23 @@
         </dependencies>
     </dependencyManagement>
 
+    <profiles>
+        <profile>
+            <!--开发环境-->
+            <id>dev</id>
+            <properties>
+                <!-- 环境标识，需要与配置文件的名称相对应 -->
+                <profileActive>dev</profileActive>
+                <!--  spring nacos 配置相关-->
+                <nacosServerAddr>${nacos-server-addr}</nacosServerAddr>
+                <nacosNameSpace>${nacos-name-space-dev}</nacosNameSpace>
+                <nacosGroup>DEFAULT_GROUP</nacosGroup>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
     <build>
         <pluginManagement>
             <plugins>
